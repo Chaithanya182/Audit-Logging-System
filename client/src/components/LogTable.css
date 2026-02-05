@@ -1,0 +1,136 @@
+.table-container {
+    overflow-x: auto;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.log-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.log-table th {
+    padding: 1rem;
+    text-align: left;
+    background: rgba(15, 23, 42, 0.8);
+    color: #94a3b8;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.log-table td {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: #e2e8f0;
+}
+
+.log-table tbody tr {
+    transition: background 0.2s;
+}
+
+.log-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.cell-timestamp {
+    color: #94a3b8;
+    font-size: 0.85rem;
+}
+
+.cell-user {
+    font-family: 'Monaco', 'Consolas', monospace;
+    font-size: 0.85rem;
+}
+
+.cell-endpoint {
+    font-family: 'Monaco', 'Consolas', monospace;
+    color: #67e8f9;
+}
+
+.cell-time {
+    color: #fbbf24;
+}
+
+.method-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+
+.method-get {
+    background: rgba(34, 197, 94, 0.2);
+    color: #22c55e;
+}
+
+.method-post {
+    background: rgba(59, 130, 246, 0.2);
+    color: #3b82f6;
+}
+
+.method-put {
+    background: rgba(249, 115, 22, 0.2);
+    color: #f97316;
+}
+
+.method-patch {
+    background: rgba(168, 85, 247, 0.2);
+    color: #a855f7;
+}
+
+.method-delete {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+}
+
+.status-badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.status-success {
+    background: rgba(34, 197, 94, 0.2);
+    color: #22c55e;
+}
+
+.status-warning {
+    background: rgba(249, 115, 22, 0.2);
+    color: #f97316;
+}
+
+.status-error {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+}
+
+.table-loading,
+.table-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
+    color: #94a3b8;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-top-color: #6366f1;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
