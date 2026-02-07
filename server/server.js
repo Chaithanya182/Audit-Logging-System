@@ -13,7 +13,16 @@ const sampleRoutes = require('./routes/sample');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+// CORS configuration for frontend
+const corsOptions = {
+    origin: [
+        'http://localhost:5173',
+        'https://audit-logging-client.onrender.com',
+        'https://audit-logging-system-d4dhm14fp-chaithanya182s-projects.vercel.app'
+    ],
+    credentials: true
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 app.set('trust proxy', true);
 app.use(auditLogger);

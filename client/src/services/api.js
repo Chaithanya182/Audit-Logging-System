@@ -1,4 +1,8 @@
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+// Use environment variable or fallback to production API
+const API_BASE = import.meta.env.VITE_API_URL || 'https://audit-logging-system.onrender.com/api';
+
+// Log the API URL for debugging
+console.log('API Base URL:', API_BASE);
 
 export const fetchLogs = async (params = {}) => {
     const query = new URLSearchParams(params).toString();
