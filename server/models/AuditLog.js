@@ -1,11 +1,10 @@
 const mongoose = require('mongoose');
 
-// Audit Log Schema - stores metadata about every API request
 const auditLogSchema = new mongoose.Schema({
     user: {
         type: String,
         required: true,
-        index: true  // Index for fast user-based queries
+        index: true  
     },
     endpoint: {
         type: String,
@@ -39,14 +38,12 @@ const auditLogSchema = new mongoose.Schema({
     timestamp: {
         type: Date,
         default: Date.now,
-        index: true  // Index for date-based filtering
+        index: true  
     }
 });
 
-// Compound index for queries that filter by both user and date
 auditLogSchema.index({ user: 1, timestamp: -1 });
 
-// Also index endpoint for filtering
 auditLogSchema.index({ endpoint: 1 });
 
 const AuditLog = mongoose.model('AuditLog', auditLogSchema);

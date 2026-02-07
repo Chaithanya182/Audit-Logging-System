@@ -1,8 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-// Some sample endpoints to demonstrate the audit logging
-// These are just for testing - in a real app you'd have your actual business logic here
 
 // Simulated users data
 const users = [
