@@ -36,11 +36,16 @@ function Dashboard() {
 
     const loadLogs = async (page = 1, limit = 20, filterParams = {}) => {
         setLoading(true);
+        console.log('Loading logs...');
         try {
             const result = await fetchLogs({ page, limit, ...filterParams });
+            console.log('Logs result:', result);
             if (result.success) {
+                console.log('Setting logs:', result.data.length, 'items');
                 setLogs(result.data);
                 setPagination(result.pagination);
+            } else {
+                console.error('API returned success=false');
             }
         } catch (err) {
             console.error('Failed to load logs:', err);
